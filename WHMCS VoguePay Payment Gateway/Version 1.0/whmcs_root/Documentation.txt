@@ -1,0 +1,25 @@
+ **********************************************************
+*  WHMCS VoguePay Payment Gateway                   *
+*  Compatible with WHMCS 5 & 6                           *
+*                                                        *
+*                                                        *
+*  ©2016 Oluwasayo Oyedepo - ALL RIGHTS RESERVED         *
+*  This software is provided as is with no warranty,     *
+*  either expressed or implied.                *
+*                                                        *
+**********************************************************
+===== Installation Instructions =====
+
+1 - Backup your files & DB.
+
+2 - Upload the contents of our WHMCS_ROOT folder to your WHMCS root folder and extract.
+
+3 - Activate the module and select your options.
+
+4 - Go to Setup > Payments > Payment Gateways. The VoguePay Gateway should already be installed.    
+
+7 - Enter your VoguePay information and Merchant ID - found in your VoguePay Account.
+
+
+********* THIS COMPLETES YOUR INSTALLATION. ********* 
+
