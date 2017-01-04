@@ -4,9 +4,6 @@
 *                                                        *
 *                                                        *
 *  ©2016 Oluwasayo Oyedepo - ALL RIGHTS RESERVED         *
-*  This software is provided as is with no warranty,     *
-*  either expressed or implied.                *
-*                                                        *
 **********************************************************
 ===== Installation Instructions =====
 
