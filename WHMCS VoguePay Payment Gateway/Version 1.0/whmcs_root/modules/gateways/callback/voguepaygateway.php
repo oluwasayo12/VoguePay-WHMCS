@@ -2,13 +2,8 @@
 //////////////////////////////////////////////////////
 //***************************************************/
 //* Please see the ReadMe.txt file for instruction  */
-//* This File is Written For Voguepay Gateway       */
-//* For Any Help, Contact me                        */
+//* This File is Written For Voguepay Gateway       */                     
 //***************************************************/
-//* Email: mbosinwa@mbosinwa.me                     */
-//* Phone: 08163429760                              */
-//* Website: http://www.mbosinwa.me                 */ 
-//* WebHost: http://www.hostmeout.com.ng            */ 
 //////////////////////////////////////////////////////
 
 
