@@ -4,12 +4,16 @@
 //* Do Not Run This File In Directly on ur Browser  */
 //* Please see the ReadMe.txt file for instruction  */
 //* This File is Written For Voguepay Gateway       */
-//*                        */
+//* For Any Help, Contact me                        */
 //***************************************************/
+//* Email: mbosinwa@mbosinwa.me                     */
+//* Phone: 08163429760                              */
+//* Website: http://www.mbosinwa.me                 */ 
+//* WebHost: http://www.hostmeout.com.ng            */ 
 //////////////////////////////////////////////////////
 
 
-function voguepay_config() {
+function voguepaygateway_config() {
 $pay_color  = 'blue'; //Default Favourite Color is blue
     $configarray = array(
      "FriendlyName" => array("Type" => "System", "Value"=>"Voguepay Payment Processor"),
@@ -21,7 +25,7 @@ $pay_color  = 'blue'; //Default Favourite Color is blue
     return $configarray;
 }
 
-function voguepay_link($params) {
+function voguepaygateway_link($params) {
     
     $pay_color  = $params['pay_color'];
     # Gateway Specific Variables
