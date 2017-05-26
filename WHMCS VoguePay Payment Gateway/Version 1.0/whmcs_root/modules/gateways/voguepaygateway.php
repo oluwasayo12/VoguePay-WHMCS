@@ -19,6 +19,7 @@ $pay_color  = 'blue'; //Default Favourite Color is blue
      "FriendlyName" => array("Type" => "System", "Value"=>"Voguepay Payment Processor"),
      "merchant_id" => array("FriendlyName" => "Voguepay Merchant ID", "Type" => "text", "Size" => "20", ),
      "pay_color" => array("FriendlyName" => "Make Payment ICon Color", "Type" => "dropdown", "Options" => "green,blue,red,grey", "Description" => "Example of Submit Image <img src=https://voguepay.com/images/buttons/make_payment_$pay_color.png border=0 alt=We Accept Voguepay />", ),
+     "cur" => array("FriendlyName" => "Currency", "Type" => "dropdown", "Options" => "NGN,USD", "Description" => "Select Currency", ),   
      "developer_code" => array("FriendlyName" => "Your Voguepay Developer Code", "Type" => "text", "Size" => "20", ),
      "notification_url" => array("FriendlyName" => "Notification URL", "Type" => "text", "Size" => "40", ),
     );
@@ -28,6 +29,7 @@ $pay_color  = 'blue'; //Default Favourite Color is blue
 function voguepaygateway_link($params) {
     
     $pay_color  = $params['pay_color'];
+    $cur  = $params['cur'];
     # Gateway Specific Variables
     $developer_code = $params['developer_code'];
     $gatewaytestmode = $params['testmode'];
@@ -89,6 +91,7 @@ function voguepaygateway_link($params) {
 <input type="hidden" name="description_1" value="'.$description.'" />
 <input type="hidden" name="memo" value="'.$description.'" />
 <input type="hidden" name="merchant_ref" value="'.$invoiceid.'" />
+<input type="hidden" name="cur" value="'.$cur.'" />
 <input type="hidden" name="notify_url" value="'.$notify_url.'" />
 <input type="image" src="https://voguepay.com/images/buttons/make_payment_'.$pay_color.'.png" border="0" alt="We Accept Voguepay" />
 
