@@ -3,6 +3,6 @@ This is a payment module developed to work with WHMCS for the Voguepay (voguepay
 
 #Installation
 
-1) Copy the file in the repository's /modules/gateways/ folder called voguepay.php and place it into the /modules/gateways/ folder of your WHMCS installation.
+1) Copy the file in the repository's /modules/gateways/ folder called voguepaygateway.php and place it into the /modules/gateways/ folder of your WHMCS installation.
 
-2) Copy the voguepay.php callback file from /modules/gateways/callback folder of the repository and place it into the /modules/gateways/callback folder of your WHMCS installation.
+2) Copy the voguepaygateway.php callback file from /modules/gateways/callback folder of the repository and place it into the /modules/gateways/callback folder of your WHMCS installation.
