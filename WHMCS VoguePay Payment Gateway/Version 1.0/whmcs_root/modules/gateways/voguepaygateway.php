@@ -6,10 +6,7 @@
 //* This File is Written For Voguepay Gateway       */
 //* For Any Help, Contact me                        */
 //***************************************************/
-//* Email: mbosinwa@mbosinwa.me                     */
-//* Phone: 08163429760                              */
-//* Website: http://www.mbosinwa.me                 */ 
-//* WebHost: http://www.hostmeout.com.ng            */ 
+//* Email: oluwasayo12@gmail.com                    */
 //////////////////////////////////////////////////////
 
 
