@@ -1,14 +1,12 @@
 <?php
 //////////////////////////////////////////////////////
 //***************************************************/
+//* Do Not Run This File In Directly on ur Browser  */
 //* Please see the ReadMe.txt file for instruction  */
 //* This File is Written For Voguepay Gateway       */
 //* For Any Help, Contact me                        */
 //***************************************************/
-//* Email: mbosinwa@mbosinwa.me                     */
-//* Phone: 08163429760                              */
-//* Website: http://www.mbosinwa.me                 */ 
-//* WebHost: http://www.hostmeout.com.ng            */ 
+//* Email: oluwasayo12@gmail.com                    */
 //////////////////////////////////////////////////////
 
 
@@ -35,7 +33,7 @@ $transaction_id = $_POST['transaction_id'];
 
 
 
-$data = file_get_contents("https://voguepay.com/?v_transaction_id=".$transaction_id."&type=xml");
+$data = file_get_contents("https://voguepay.com/?v_transaction_id=".$transaction_id."&type=xml&demo=true");
 
 //$result = json_decode($data, true);
 
@@ -57,27 +55,27 @@ $merchant_id = $GATEWAY['merchant_id'];
 if ($status =="Approved" ) {
      //Successful
     addInvoicePayment($invoice_id,$transid,$amount,$fee,$gatewaymodule); 
-    logTransaction($GATEWAY["name"],$_POST,"Transaction Was Successful");
+    logTransaction($gatewayModuleName["name"],$_POST,"Transaction Was Successful");
 }
 else
 {
-logTransaction($GATEWAY["name"],$_POST,"Transaction Not Approved OR Unrecognised Merchant ID");
+logTransaction($gatewayModuleName["name"],$_POST,"Transaction Not Approved OR Unrecognised Merchant ID");
 }
 
 if ($status =="Pending") {
-    logTransaction($GATEWAY["name"],$_POST,"Pending");
+    logTransaction($gatewayModuleName["name"],$_POST,"Pending");
 }
 
 if ($status =="Failed") {
-    logTransaction($GATEWAY["name"],$_POST,"Failed");
+    logTransaction($gatewayModuleName["name"],$_POST,"Failed");
 }
 
 if ($status =="Disputed") {
-    logTransaction($GATEWAY["name"],$_POST,"Disputed");
+    logTransaction($gatewayModuleName["name"],$_POST,"Disputed");
 }
 
 if ($status =="Cancelled") {
-   logTransaction($GATEWAY["name"],$_POST,"Payment Cancelled By Customer");
+   logTransaction($gatewayModuleName["name"],$_POST,"Payment Cancelled By Customer");
 }
 
 ?>
