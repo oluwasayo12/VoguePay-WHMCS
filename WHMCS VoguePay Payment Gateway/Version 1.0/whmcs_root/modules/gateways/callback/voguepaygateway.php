@@ -33,7 +33,7 @@ $transaction_id = $_POST['transaction_id'];
 
 
 
-$data = file_get_contents("https://voguepay.com/?v_transaction_id=".$transaction_id."&type=xml&demo=true");
+$data = file_get_contents("https://voguepay.com/?v_transaction_id=".$transaction_id."&type=xml");
 
 //$result = json_decode($data, true);
 
