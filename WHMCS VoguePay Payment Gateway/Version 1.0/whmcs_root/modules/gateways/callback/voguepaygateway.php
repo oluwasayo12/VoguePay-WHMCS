@@ -24,7 +24,7 @@ require_once __DIR__ . '/../../../includes/invoicefunctions.php';
 
 $gatewayModuleName = basename(__FILE__, '.php');
 
-$GATEWAY = getGatewayVariables($gatewaymodule);
+$GATEWAY = getGatewayVariables($gatewayModuleName);
 if (!$GATEWAY["type"]) die("Module Not Activated"); # Checks gateway module is active before accepting callback
 
 
@@ -54,7 +54,7 @@ $merchant_id = $GATEWAY['merchant_id'];
 
 if ($status =="Approved" ) {
      //Successful
-    addInvoicePayment($invoice_id,$transid,$amount,$fee,$gatewaymodule); 
+    addInvoicePayment($invoice_id,$transid,$amount,$fee,$gatewayModuleName); 
     logTransaction($gatewayModuleName["name"],$_POST,"Transaction Was Successful");
 }
 else
