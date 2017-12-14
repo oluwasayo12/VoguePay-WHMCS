@@ -33,15 +33,22 @@ $transaction_id = $_POST['transaction_id'];
 
 
 
-$data = file_get_contents("https://voguepay.com/?v_transaction_id=".$transaction_id."&type=xml&demo=true");
+//$data = file_get_contents("https://voguepay.com/?v_transaction_id=".$transaction_id."&type=json&demo=true");
 
-//$result = json_decode($data, true);
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://voguepay.com/?v_transaction_id=".$transaction_id."&type=json&demo=true",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
+$response = curl_exec($curl);
+curl_close($curl);
+$transaction = json_decode($response, true);
 
-$xml_elements = new SimpleXMLElement($data);
-$transaction = array();
-$t = array();
-
-foreach($xml_elements as $key => $value) $transaction[$key]=$value;
 # Get Returned Variables - Adjust for Post Variable Names from your Gateway's Documentation
 $invoice_id = $transaction['merchant_ref'];
 $status = $transaction['status'];
@@ -56,6 +63,9 @@ if ($status =="Approved" ) {
      //Successful
     addInvoicePayment($invoice_id,$transid,$amount,$fee,$gatewayModuleName); 
     logTransaction($gatewayModuleName["name"],$_POST,"Transaction Was Successful");
+     $redirect_url = "//".$_SERVER['SERVER_NAME']."/billing/viewinvoice.php?id=".$invoice_id;
+     header('Location: '.$redirect_url);     
+     
 }
 else
 {
