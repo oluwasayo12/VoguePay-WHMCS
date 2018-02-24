@@ -37,7 +37,7 @@ $transaction_id = $_POST['transaction_id'];
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://voguepay.com/?v_transaction_id=".$transaction_id."&type=json&demo=true",
+  CURLOPT_URL => "https://voguepay.com/?v_transaction_id=".$transaction_id."&type=json",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
