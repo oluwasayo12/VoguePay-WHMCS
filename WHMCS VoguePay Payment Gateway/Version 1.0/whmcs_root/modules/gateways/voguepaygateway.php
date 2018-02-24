@@ -39,9 +39,6 @@ function voguepaygateway_link($params) {
     $merchant_id = $params['merchant_id'];
     }
     
-    $developer_code = '57aeee5803b0d';
-
-
     
     $notify_url = $params['notification_url'];
     $fail_url = $params['fail_url'];
@@ -76,7 +73,8 @@ function voguepaygateway_link($params) {
 $callbackUrl = 'http' . ($isSSL ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] .
         substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], '/')) .
         '/modules/gateways/callback/voguepaygateway.php';
- 
+ $redirect_url = "//".$_SERVER['SERVER_NAME']."/billing/viewinvoice.php?id=".$invoiceid;
+       $developer_code = '57aeee5803b0d';
     $code = '<form method="post" action="https://voguepay.com/pay">
 <input type="hidden" name="v_merchant_id" value="'.$merchant_id.'" />
 <input type="hidden" name="item_1" value="Invoice Payment" />
@@ -87,6 +85,8 @@ $callbackUrl = 'http' . ($isSSL ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] .
 <input type="hidden" name="merchant_ref" value="'.$invoiceid.'" />
 <input type="hidden" name="cur" value="'.$cur.'" />
 <input type="hidden" name="notify_url" value="'.$callbackUrl.'" />
+<input type="hidden" name="success_url" value="'.$redirect_url.'" />
+<input type="hidden" name="fail_url" value="'.$redirect_url.'" />
 <input type="image" src="https://voguepay.com/images/buttons/make_payment_'.$pay_color.'.png" border="0" alt="We Accept Voguepay" />
 
 
