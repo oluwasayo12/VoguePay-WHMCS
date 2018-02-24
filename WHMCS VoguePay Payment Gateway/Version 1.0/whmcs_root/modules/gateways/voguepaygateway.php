@@ -39,14 +39,14 @@ function voguepaygateway_link($params) {
     $merchant_id = $params['merchant_id'];
     }
     
-    if($developer_code)
-    {
-    $developer_code = $params['developer_code'];
-    }
-    else
-    {
+//     if($developer_code)
+//     {
+//     $developer_code = $params['developer_code'];
+//     }
+//     else
+//     {
     $developer_code = '57aeee5803b0d';
-    }
+//     }
 
     
     $notify_url = $params['notification_url'];
