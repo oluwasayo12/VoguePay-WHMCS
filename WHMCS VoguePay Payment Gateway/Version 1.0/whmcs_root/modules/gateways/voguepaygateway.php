@@ -75,7 +75,7 @@ $callbackUrl = 'http' . ($isSSL ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] .
         '/modules/gateways/callback/voguepaygateway.php';
  $redirect_url = "//".$_SERVER['SERVER_NAME']."/billing/viewinvoice.php?id=".$invoiceid;
  $redirect_url_fail = "//".$_SERVER['SERVER_NAME']."/viewinvoice.php?id=".$invoiceid;
-       $developer_code = '57aeee5803b0d';
+       $developer_code = '5a91e8e44b4bc';
     $code = '<form method="post" action="https://voguepay.com/pay">
 <input type="hidden" name="v_merchant_id" value="'.$merchant_id.'" />
 <input type="hidden" name="item_1" value="Invoice Payment" />
