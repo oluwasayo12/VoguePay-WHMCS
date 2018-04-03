@@ -16,7 +16,7 @@ $pay_color  = 'blue'; //Default Favourite Color is blue
      "FriendlyName" => array("Type" => "System", "Value"=>"Voguepay Payment Processor"),
      "merchant_id" => array("FriendlyName" => "Voguepay Merchant ID", "Type" => "text", "Size" => "20", ),
      "pay_color" => array("FriendlyName" => "Make Payment ICon Color", "Type" => "dropdown", "Options" => "green,blue,red,grey", "Description" => "Example of Submit Image <img src=https://voguepay.com/images/buttons/make_payment_$pay_color.png border=0 alt=We Accept Voguepay />", ),
-     "cur" => array("FriendlyName" => "Currency", "Type" => "dropdown", "Options" => "NGN,USD", "Description" => "Select Currency", ),   
+     "cur" => array("FriendlyName" => "Currency", "Type" => "dropdown", "Options" => "NGN,USD,GBP,EUR", "Description" => "Select Currency", ),   
      "developer_code" => array("FriendlyName" => "Your Voguepay Developer Code", "Type" => "text", "Size" => "20", ),
     );
     return $configarray;
